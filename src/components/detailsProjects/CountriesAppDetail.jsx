@@ -1,0 +1,228 @@
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { useInView } from "react-intersection-observer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+
+
+export default function CountriesAppDetail() {
+    const navigate = useNavigate();
+    const [expandedImg, setExpandedImg] = useState(null); // Imagen activa
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
+
+    const handleImageClick = (src) => setExpandedImg(src);
+    const handleOverlayClick = () => setExpandedImg(null);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="min-h-screen from-gray-900 to-gray-800 text-white pt-24 px-6 md:px-20 pb-20"
+        >
+            <div className="max-w-6xl mx-auto">
+
+                {/* Imagen expandida */}
+                {expandedImg && (
+                    <div
+                        onClick={handleOverlayClick}
+                        className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center"
+                    >
+                        <img
+                            src={expandedImg}
+                            alt="Imagen expandida"
+                            className="max-w-5xl max-h-[90vh] rounded-xl shadow-2xl border border-purple-500/30"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                )}
+
+                {/* Encabezado */}
+                <div className="mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-purple-400 mb-4">ExploraMundi</h1>
+                    <p className="text-xl text-gray-300 max-w-3xl">
+                        Aplicación que muestra información de países con filtros, búsquedas, ademas de multiples mapas interactivos donde el usuario puede encontrar cualquier lugar del mundo.
+                    </p>
+                </div>
+
+                {/* Contenido principal */}
+                <div className="grid md:grid-cols-2 gap-10 items-start">
+                    {/* Galería de imágenes */}
+                    <div className="space-y-6">
+                        {/* Imagen principal */}
+                        <img
+                            src="/images/projects-img/exploraMundi/img1.png"
+                            alt="Dashboard VetConnect"
+                            className="w-full rounded-xl shadow-2xl border border-purple-500/20 cursor-pointer"
+                            onClick={() => handleImageClick("/images/projects-img/exploraMundi/img1.png")}
+                        />
+
+                        {/* Collage */}
+                        <div
+                            className="grid grid-cols-2 gap-4"
+                            style={{ gridTemplateAreas: `"img1 img2" "img1 img3"` }}
+                        >
+                            {/* Imagen vertical (img1) */}
+                            <div
+                                className="rounded-xl shadow-lg border border-purple-500/10 overflow-hidden flex items-center justify-center cursor-pointer"
+                                style={{ gridArea: "img1" }}
+                                onClick={() => handleImageClick("/images/projects-img/exploraMundi/imgmovil.png")}
+                            >
+                                <img
+                                    src="/images/projects-img/exploraMundi/imgmovil.png"
+                                    alt="Versión móvil"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+
+                            {/* Imagen lateral (img2) */}
+                            <div
+                                className="rounded-xl shadow-lg border border-purple-500/10 overflow-hidden flex items-center justify-center cursor-pointer"
+                                style={{ gridArea: "img2" }}
+                                onClick={() => handleImageClick("/images/projects-img/exploraMundi/img2.png")}
+                            >
+                                <img
+                                    src="/images/projects-img/exploraMundi/img2.png"
+                                    alt="Historial clínico"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+
+                            {/* Imagen lateral (img3) */}
+                            <div
+                                className="rounded-xl shadow-lg border border-purple-500/10 overflow-hidden flex items-center justify-center cursor-pointer"
+                                style={{ gridArea: "img3" }}
+                                onClick={() => handleImageClick("/images/projects-img/exploraMundi/img3.png")}
+                            >
+                                <img
+                                    src="/images/projects-img/exploraMundi/img3.png"
+                                    alt="Historial clínico"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Información del proyecto */}
+                    <div>
+                        <div className="mb-10">
+                            <h2 className="text-2xl font-semibold text-white mb-4">Sobre el proyecto</h2>
+                            <div className="space-y-4 text-gray-300">
+                                <p>
+                                    <strong>ExploraMundi</strong> es una aplicación web interactiva que permite explorar el mundo a través de un globo terráqueo 3D, proporcionando información detallada sobre cada país y región.
+                                </p>
+                                <p>
+                                    Utilizando <strong>CesiumJS</strong>, la aplicación ofrece una visualización inmersiva del planeta, permitiendo a los usuarios buscar países por nombre o capital y obtener datos clave de cada uno.
+                                </p>
+                                <p>
+                                    Es una herramienta educativa ideal para quienes desean descubrir el planeta de manera visual, fluida y educativa.
+                                </p>
+                                <ul className="list-disc pl-6 space-y-2">
+                                    <li>Exploración global en 3D con CesiumJS</li>
+                                    <li>Búsqueda inteligente de países por nombre o capital</li>
+                                    <li>Información detallada de cada país y región</li>
+                                    <li>Interfaz intuitiva y educativa</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Tecnologías */}
+                        <div className="mb-10">
+                            <div className="p-4 bg-gray-800/50 border border-gray-700/30 rounded-xl w-full">
+                                <h2 className="text-2xl font-semibold text-white mb-6">Tecnologías utilizadas</h2>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {[
+                                        'React', 'Vite', 'CesiumJS', 'Tailwind CSS', 'JavaScript', 'HTML5', 'CSS3'
+                                    ].map((tech, i) => (
+                                        <motion.div
+                                            key={tech}
+                                            initial={{ opacity: 0, scale: 0.5 }}
+                                            animate={inView ? { opacity: 1, scale: 1 } : {}}
+                                            transition={{ delay: 0.2 + i * 0.1, type: 'spring', stiffness: 100 }}
+                                            whileHover={{ scale: 1.08 }}
+                                            className="group px-3 py-1.5 rounded-full flex items-center justify-center text-white transition-all duration-300"
+                                            style={{ backgroundColor: 'rgba(31, 41, 55, 0.8)' }}
+                                        >
+                                            <span className="group-hover:text-white transition-colors duration-300">
+                                                {tech}
+                                            </span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Enlaces */}
+                        <div ref={ref} className="space-y-4 relative pb-6">
+                            <h2 className="text-2xl font-semibold text-white mb-2">Enlaces</h2>
+                            <p className="text-gray-300">
+                                Puedes explorar el repositorio o la aplicación para más detalles:
+                            </p>
+
+                        </div>
+                        <div ref={ref} className="space-y-4 relative pb-6">
+                            <a
+                                href="https://exploramundi.netlify.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-purple-400 hover:underline"
+                            >
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="w-4 h-4" />
+                                <span>Web</span>
+                            </a>
+                            <a
+                                href="https://github.com/neiderp24/ExploraMundi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-purple-400 hover:underline"
+                            >
+                                <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
+                                <span>GitHub</span>
+                            </a>
+
+                            <motion.span
+                                initial="hidden"
+                                animate={inView ? 'visible' : 'hidden'}
+                                variants={{
+                                    hidden: { scaleX: 0 },
+                                    visible: {
+                                        scaleX: 1,
+                                        transition: { duration: 1, ease: 'easeInOut' },
+                                    },
+                                }}
+                                className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-600 to-transparent"
+                            />
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                {/* Botón de regreso */}
+                <button
+                    onClick={() => navigate(-1)}
+                    className="mt-6 group relative inline-block px-6 py-2 rounded-full font-semibold text-white bg-black/20 border border-purple-500 shadow-[0_0_10px_rgba(139,92,246,0.5)] hover:shadow-[0_0_15px_rgba(139,92,246,0.9)] transition-all duration-300 overflow-hidden min-w-[90px] text-center"
+                >
+                    <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                        Volver
+                    </span>
+                    <span className="opacity-0 transform translate-y-2 scale-90 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-out flex items-center justify-center">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </span>
+                    <span className="absolute inset-0 rounded-full bg-purple-500 opacity-10 z-[-1]" />
+                </button>
+            </div>
+        </motion.div>
+    );
+}
+

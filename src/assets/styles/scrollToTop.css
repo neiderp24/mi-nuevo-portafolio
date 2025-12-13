@@ -1,0 +1,47 @@
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 1rem;
+    border-radius: 9999px;
+    background: transparent;
+    color: white;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.rocket-with-flame {
+    display: inline-block;
+    position: relative;
+}
+
+.rocket-with-flame::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    width: 6px;
+    height: 14px;
+    background: linear-gradient(to bottom, orange, red, transparent);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: flame 0.2s infinite;
+    z-index: -1;
+}
+
+@keyframes flame {
+    0% {
+        height: 14px;
+        opacity: 0.9;
+    }
+
+    50% {
+        height: 10px;
+        opacity: 0.5;
+    }
+
+    100% {
+        height: 14px;
+        opacity: 0.9;
+    }
+}
