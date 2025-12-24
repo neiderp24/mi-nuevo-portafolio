@@ -90,7 +90,7 @@ export const Certifications = () => {
                         />
                     </motion.h2>
                 </div>
-                <div className="grid grid-cols-1 gap-y-12">
+                <div className="grid grid-cols-1 gap-y-12 text-xl">
                     {certifications.map((cert, i) => (
                         <motion.div
                             key={cert.title}
@@ -106,7 +106,7 @@ export const Certifications = () => {
                                 onClick={(e) => handleCertificateClick(cert.pdf, e)}
                                 className="block"
                             >
-                                <div className="flex flex-col md:flex-row gap-6 items-start transition-all hover:bg-gray-800/30 rounded-lg p-4">
+                                <div className="text-xl flex flex-col md:flex-row gap-6 items-start transition-all hover:bg-gray-800/30 rounded-lg p-4">
                                     {/* Miniatura del certificado - ajustada para móvil */}
                                     <motion.div
                                         whileHover={{ scale: 1.05 }}
@@ -133,7 +133,7 @@ export const Certifications = () => {
                                         {/* Texto "Ver certificado" con efecto hover */}
                                         <motion.p
                                             whileHover={{ scale: 1.05 }}
-                                            className="mt-3 text-white text-sm no-underline inline-block"
+                                            className="mt-3  text-white text-xl no-underline inline-block"
                                         >
                                             Ver certificado
                                         </motion.p>

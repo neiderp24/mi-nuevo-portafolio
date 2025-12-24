@@ -34,13 +34,13 @@ const Hero = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.5 }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
+                    <h1 className="text-6xl md:text-8xl font-bold mb-4 text-white">
                         <TypeAnimation
                             key={key}
                             sequence={[
                                 "Neider Parra", 1000,
                                 "Desarrollador Web ", 1000,
-                                "Obsesionado con los detalles visuales", 1000,
+                                "Aquí las ideas toman forma", 1000,
                                 "Neider Parra", () => setAnimationFinished(true)
                             ]}
                             wrapper="span"
@@ -79,7 +79,7 @@ const Hero = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 2, duration: 1 }}
                 >
-                    <p className="text-lg md:text-2xl">
+                    <p className="text-lg md:text-3xl">
                         Desarrollador Full-Stack y de aplicaciones móviles.
                     </p>
                 </motion.div>

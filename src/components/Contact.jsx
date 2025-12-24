@@ -111,7 +111,7 @@ const Contact = () => {
             className="relative py-32 px-6 md:px-20 z-10 min-h-screen flex items-center justify-center"
         >
 
-            <div className="max-w-3xl w-full">
+            <div className="max-w-3xl w-full text-xl">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: -20 }}

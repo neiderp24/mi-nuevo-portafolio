@@ -121,7 +121,7 @@ export const About = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={inView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.3 + i * 0.2, duration: 0.7 }}
-                                    className="text-lg text-gray-300"
+                                    className="text-xl text-gray-300"
                                 >
                                     {text}
                                 </motion.p>
@@ -191,7 +191,7 @@ export const About = () => {
                             initial={{ opacity: 0 }}
                             animate={inView ? { opacity: 1 } : {}}
                             transition={{ delay: 1.2, duration: 0.8 }}
-                            className="mt-8 text-center italic text-gray-400 max-w-xs relative pb-4"
+                            className="mt-8 text-xl text-center italic text-gray-400 max-w-xs relative pb-4"
                         >
                             "Conectemos y compartamos ideas"
                             <motion.span

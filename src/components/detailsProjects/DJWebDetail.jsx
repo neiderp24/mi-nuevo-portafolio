@@ -110,7 +110,7 @@ export default function DJWebDetail() {
                     <div>
                         <div className="mb-10">
                             <h2 className="text-2xl font-semibold text-white mb-4">Sobre el proyecto</h2>
-                            <div className="space-y-4 text-gray-300">
+                            <div className="space-y-4 text-gray-300 text-xl">
                                 <p>
                                     Esta web fue diseñada como una plataforma personal para un DJ, con el objetivo de destacar su imagen, estilo y profesionalismo de forma visualmente atractiva.
                                 </p>
@@ -159,7 +159,7 @@ export default function DJWebDetail() {
                         {/* Enlaces */}
                         <div ref={ref} className="space-y-4 relative pb-6">
                             <h2 className="text-2xl font-semibold text-white mb-2">Enlaces</h2>
-                            <p className="text-gray-300">
+                            <p className="text-gray-300 text-xl">
                                 Por motivos legales o contractuales, no puedo compartir información adicional sobre este proyecto.
                                 Si tienes preguntas específicas, no dudes en contactarme directamente.
                             </p>

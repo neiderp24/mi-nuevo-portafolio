@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function CountriesAppDetail() {
@@ -114,7 +114,7 @@ export default function CountriesAppDetail() {
                     <div>
                         <div className="mb-10">
                             <h2 className="text-2xl font-semibold text-white mb-4">Sobre el proyecto</h2>
-                            <div className="space-y-4 text-gray-300">
+                            <div className="space-y-4 text-gray-300 text-xl">
                                 <p>
                                     <strong>ExploraMundi</strong> es una aplicación web interactiva que permite explorar el mundo a través de un globo terráqueo 3D, proporcionando información detallada sobre cada país y región.
                                 </p>
@@ -162,7 +162,7 @@ export default function CountriesAppDetail() {
                         {/* Enlaces */}
                         <div ref={ref} className="space-y-4 relative pb-6">
                             <h2 className="text-2xl font-semibold text-white mb-2">Enlaces</h2>
-                            <p className="text-gray-300">
+                            <p className="text-gray-300 text-xl">
                                 Puedes explorar el repositorio o la aplicación para más detalles:
                             </p>
 
@@ -174,7 +174,7 @@ export default function CountriesAppDetail() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-purple-400 hover:underline"
                             >
-                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="w-4 h-4" />
+                                <FontAwesomeIcon icon={faGlobe} className="w-4 h-4" />
                                 <span>Web</span>
                             </a>
                             <a

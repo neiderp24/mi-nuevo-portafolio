@@ -79,7 +79,7 @@ export const Experience = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.2, duration: 0.6 }}
-                            className="relative text-white text-lg md:text-xl font-medium pb-4"
+                            className="relative text-white text-xl md:text-2xl font-medium pb-4"
                         >
                             <div>
                                 <span className="text-purple-400">{exp.role}</span> ·{" "}

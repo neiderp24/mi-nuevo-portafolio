@@ -163,7 +163,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop menu */}
-                <ul className="hidden md:flex gap-6 text-sm uppercase tracking-wide relative">
+                <ul className="hidden md:flex text-xl gap-6 tracking-wide relative">
                     {sections.map((item) => (
                         <li key={item.href} className="relative group">
                             <Link
@@ -185,7 +185,7 @@ const Navbar = () => {
 
                 {/* Hamburger icon */}
                 <div className="md:hidden flex items-center">
-                    <button ref={buttonRef} onClick={toggleMenu} className="text-3xl">
+                    <button ref={buttonRef} onClick={toggleMenu} className="text-4xl">
                         <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
                     </button>
                 </div>

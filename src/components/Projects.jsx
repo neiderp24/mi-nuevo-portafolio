@@ -17,7 +17,7 @@ const projects = [
         slug: "web-dj", // Slug único
         description: "Sitio web para DJ con secciones de música, eventos y animaciones personalizadas.",
         tech: ["React", "Bootstrap", "Vite"],
-        image: "/images/projects-img/web-dj/img1.png",       
+        image: "/images/projects-img/web-dj/img1.png",
         link: "#"
     },
     {
@@ -95,8 +95,8 @@ export const Projects = () => {
 
                                 <div className="text-white md:w-2/3">
                                     <h3 className="text-3xl font-semibold mb-2">{project.title}</h3>
-                                    <p className="text-gray-400 mb-4">{project.description}</p>
-                                    <div className="flex flex-wrap gap-2 text-sm text-purple-400 mb-4">
+                                    <p className="text-gray-400 mb-4 text-xl">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2 text-lg text-purple-400 mb-4">
                                         {project.tech.map((tech) => (
                                             <span
                                                 key={tech}

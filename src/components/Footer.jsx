@@ -30,7 +30,7 @@ const Footer = () => {
             />
 
             <div className="w-full px-6 md:px-10 py-6 flex flex-col md:flex-row items-center justify-between relative z-20">
-                <p className="text-sm text-gray-400">
+                <p className="text-lg text-gray-400">
                     &copy; {new Date().getFullYear()} Neider Parra.
                 </p>
 
